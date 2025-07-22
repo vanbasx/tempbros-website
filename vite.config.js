@@ -1,3 +1,5 @@
+import fs from 'fs'
+import path from 'path'
 import { defineConfig } from 'vite'
 import tailwindcss from '@tailwindcss/vite';
 import laravel from 'laravel-vite-plugin'
@@ -5,6 +7,14 @@ import { wordpressPlugin, wordpressThemeJson } from '@roots/vite-plugin';
 
 export default defineConfig({
   base: '/wp-content/themes/tempbros-website/public/build/',
+  server: {
+    host: 'tempbros.local',
+    https: {
+      key: fs.readFileSync(path.resolve(__dirname, 'tempbros.local-key.pem')),
+      cert: fs.readFileSync(path.resolve(__dirname, 'tempbros.local.pem')),
+    },
+    cors: true,
+  },
   plugins: [
     tailwindcss(),
     laravel({
