@@ -9,7 +9,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
   </head>
 
-  <body @php(body_class())>
+  <body @php(body_class('bg-neutral-50'))>
     @php(wp_body_open())
 
     <div id="app">
@@ -31,7 +31,11 @@
 
       @include('sections.footer')
     </div>
-
+    <div class="-z-5 fixed inset-0 gap-x-6 grid grid-cols-3 size-full container" aria-hidden="true">
+      <div class="border-neutral-200 border-x"></div>
+      <div class="border-neutral-200 border-x"></div>
+      <div class="border-neutral-200 border-x"></div>
+    </div>
     @php(do_action('get_footer'))
     @php(wp_footer())
   </body>
