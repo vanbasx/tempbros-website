@@ -13,7 +13,7 @@
       </span>
     </div>
     <div class="flex items-center gap-2">
-      <button class="flex justify-between items-center bg-white shadow-xs hover:shadow-sm p-4 rounded-xl w-60 text-neutral-400 text-sm transition-shadow cursor-text">
+      <button id="search-btn" class="flex justify-between items-center bg-white shadow-xs hover:shadow-sm p-4 rounded-xl w-60 text-neutral-400 text-sm transition-shadow cursor-text">
         Search...
         <img class="select-none" src="{{ Vite::asset('resources/images/magnifying-glass.svg') }}">
       </button>
@@ -33,16 +33,4 @@
   @endif --}}
 </header>
 
-{{-- <div class="fixed inset-0 flex justify-center items-center bg-black/50 size-full">
-  <div class="bg-white rounded-2xl w-lg text-neutral-400">
-    <label for="search-form" class="flex items-center gap-2 p-4 cursor-text">
-      <img class="h-lh select-none" src="{{ Vite::asset('resources/images/magnifying-glass.svg') }}">
-      <input 
-        id="search-form"
-        class="outline-0 w-full text-neutral-900 placeholder:text-neutral-400"
-        type="text"
-        placeholder="Search..."
-      >
-    </label>
-  </div>
-</div> --}}
+@include('partials.search-form')

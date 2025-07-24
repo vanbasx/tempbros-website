@@ -7,6 +7,10 @@
     @php(wp_head())
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    <link rel="preload" href="{{ Vite::asset('resources/fonts/Outfit-SemiBold.woff2') }}" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="{{ Vite::asset('resources/fonts/Outfit-Regular.woff2') }}" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="{{ Vite::asset('resources/fonts/Outfit-Medium.woff2') }}" as="font" type="font/woff2" crossorigin="">
   </head>
 
   <body @php(body_class('bg-neutral-50'))>
@@ -23,11 +27,7 @@
         @yield('content')
       </main>
 
-      @hasSection('sidebar')
-        <aside class="sidebar">
-          @yield('sidebar')
-        </aside>
-      @endif
+      @include('sections.sidebar')
 
       @include('sections.footer')
     </div>
