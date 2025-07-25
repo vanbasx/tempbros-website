@@ -17,7 +17,7 @@
         Search...
         <img class="select-none" src="{{ Vite::asset('resources/images/magnifying-glass.svg') }}">
       </button>
-      <button class="flex items-center gap-1 bg-accent shadow-xs p-4 rounded-xl text-sm cursor-pointer">
+      <button class="flex items-center gap-1 bg-accent shadow-xs p-4 rounded-xl font-medium text-sm cursor-pointer">
         <img class="select-none" src="{{ Vite::asset('resources/images/lightning.svg') }}">
         Get All Access
       </button>

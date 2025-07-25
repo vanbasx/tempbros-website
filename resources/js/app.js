@@ -1,4 +1,5 @@
-import searchForm from "./searchForm";
+import searchFormInit from "./searchForm";
+import sidebarMenuInit from "./sidebarMenu";
 
 import.meta.glob([
   '../images/**',
@@ -6,4 +7,5 @@ import.meta.glob([
 ]);
 
 
-searchForm();
+searchFormInit();
+sidebarMenuInit();

@@ -1,6 +1,6 @@
 import gsap from "gsap";
 
-export default function searchForm() {
+export default function searchFormInit() {
 
   const openBtn = document.querySelector('#search-btn');
   const popup = document.querySelector('#search-popup');
