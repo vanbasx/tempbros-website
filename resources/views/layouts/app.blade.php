@@ -27,8 +27,6 @@
         @yield('content')
       </main>
 
-      @include('sections.sidebar')
-
       @include('sections.footer')
     </div>
     <div class="-z-5 fixed inset-0 gap-x-6 grid grid-cols-3 size-full container" aria-hidden="true">

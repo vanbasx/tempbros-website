@@ -6,7 +6,7 @@ export default function sidebarMenuInit() {
   const btn = document.querySelector('#sidebar-btn');
   const links = document.querySelectorAll('#sidebar a > span');
 
-  if (!sidebar || !btn) return;
+  if (!sidebar || !btn || !links) return;
 
   const tl = gsap.timeline({ paused: true });
   const mm = gsap.matchMedia();
