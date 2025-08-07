@@ -15,7 +15,7 @@
   --breakpoint-xl: 1200px;
   --breakpoint-xxl: 1620px;
 
-  --shadow-xs: 0 0px 4px rgba(0, 0, 0, 0.08);
+  --shadow-xs: 0 0px 12px rgba(0, 0, 0, 0.02);
   --shadow-sm: 0 0px 20px rgba(0, 0, 0, 0.08); 
 
   --default-transition-duration: 200ms;

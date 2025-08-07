@@ -1,28 +1,69 @@
-<header class="py-8">
-  <div class="flex justify-between items-center container">
-    <div class="flex items-center gap-4">
-      <a 
-        class="inline-block w-fit shrink-0" 
-        href="{{ home_url('/') }}"
-      >
-        <img class="select-none" src="{{ Vite::asset('resources/images/logo.svg') }}">
-      </a>
-      <svg class="max-md:hidden" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.79167 10C5.71528 9.54859 5.51389 9.0625 5.1875 8.54167C4.86111 8.01391 4.39583 7.52432 3.79167 7.07292C3.19444 6.62153 2.59722 6.33333 2 6.20833V5.77083C2.59028 5.63194 3.15625 5.375 3.69792 5C4.24653 4.61806 4.70486 4.15972 5.07292 3.625C5.44792 3.07639 5.6875 2.53472 5.79167 2H6.22917C6.29167 2.34722 6.41667 2.70486 6.60417 3.07292C6.79167 3.43403 7.03125 3.78125 7.32292 4.11458C7.62151 4.44097 7.95484 4.73611 8.32292 5C8.87151 5.38889 9.43057 5.64583 10 5.77083V6.20833C9.61807 6.28472 9.22224 6.44097 8.8125 6.67708C8.40974 6.91319 8.03474 7.19443 7.6875 7.52083C7.34026 7.84026 7.05556 8.17708 6.83333 8.53125C6.50694 9.05208 6.30556 9.54167 6.22917 10H5.79167Z" fill="#A1A1A1"/></svg>
-      <span class="max-md:hidden text-neutral-600 text-sm">
-        WordPress Templates
-      </span>
-    </div>
-    <div class="flex items-center gap-2">
-      <button id="search-btn" class="flex justify-between items-center bg-white shadow-xs hover:shadow-sm p-4 rounded-xl w-60 transition-shadow cursor-text">
-        <span class="text-neutral-400 text-sm">
-          Search...
+<header id="header" class="group max-md:top-0 max-md:left-0 max-md:fixed pt-8 max-md:w-full">
+  <div class="container">
+    <div class="relative flex justify-between items-center bg-transparent group-[.active-menu]:bg-white group-[.active-menu]:shadow-xs group-[.active-menu]:p-2 group-[.active-menu]:pl-4 max-md:rounded-xl max-md:transition-all max-md:duration-400">
+      {{-- Logo --}}
+      <div class="flex items-center gap-4">
+        <a 
+          class="inline-block w-fit shrink-0" 
+          href="{{ home_url('/') }}"
+        >
+          <img class="select-none" src="{{ Vite::asset('resources/images/logo.svg') }}">
+        </a>
+        <svg class="max-md:hidden" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.79167 10C5.71528 9.54859 5.51389 9.0625 5.1875 8.54167C4.86111 8.01391 4.39583 7.52432 3.79167 7.07292C3.19444 6.62153 2.59722 6.33333 2 6.20833V5.77083C2.59028 5.63194 3.15625 5.375 3.69792 5C4.24653 4.61806 4.70486 4.15972 5.07292 3.625C5.44792 3.07639 5.6875 2.53472 5.79167 2H6.22917C6.29167 2.34722 6.41667 2.70486 6.60417 3.07292C6.79167 3.43403 7.03125 3.78125 7.32292 4.11458C7.62151 4.44097 7.95484 4.73611 8.32292 5C8.87151 5.38889 9.43057 5.64583 10 5.77083V6.20833C9.61807 6.28472 9.22224 6.44097 8.8125 6.67708C8.40974 6.91319 8.03474 7.19443 7.6875 7.52083C7.34026 7.84026 7.05556 8.17708 6.83333 8.53125C6.50694 9.05208 6.30556 9.54167 6.22917 10H5.79167Z" fill="#A1A1A1"/></svg>
+        <span class="max-md:hidden text-neutral-600 text-sm">
+          WordPress Templates
         </span>
-        <img class="select-none" src="{{ Vite::asset('resources/images/magnifying-glass.svg') }}">
-      </button>
-      <a href="" class="flex items-center gap-1 bg-accent shadow-xs p-4 rounded-xl font-medium text-sm cursor-pointer">
-        <img class="select-none" src="{{ Vite::asset('resources/images/lightning.svg') }}">
-        Get All Access
-      </a>
+      </div>
+
+      {{-- Buttons --}}
+      <div class="flex max-xl:flex-row-reverse items-center gap-2">
+
+        <button id="menu-btn" class="group xl:hidden flex justify-center items-center bg-white group-[.active-menu]:bg-neutral-100 shadow-xs rounded-xl size-13 transition-colors duration-400 cursor-pointer">
+          <div class="relative w-5 h-3">
+            <span class="top-0 left-0 absolute bg-neutral-950 rounded-full w-full h-0.5 group-[.active-menu-btn]:rotate-45 transition-all group-[.active-menu-btn]:translate-y-[5px] duration-400"></span>
+            <span class="top-1/2 left-0 absolute bg-neutral-950 rounded-full w-2/3 group-[.active-menu-btn]:w-full h-0.5 group-[.active-menu-btn]:-rotate-45 transition-all -translate-y-1/2 duration-400"></span>
+            <span class="bottom-0 left-0 absolute bg-neutral-950 group-[.active-menu-btn]:opacity-0 rounded-full w-1/3 h-0.5 transition-all duration-400"></span>
+          </div>
+        </button>
+
+        <button id="search-btn" class="flex justify-between items-center bg-white shadow-xs hover:shadow-sm p-4 rounded-xl w-60 max-xl:w-fit transition-shadow cursor-text">
+          <span class="max-xl:hidden text-neutral-400 text-sm">
+            Search...
+          </span>
+          <img class="select-none" src="{{ Vite::asset('resources/images/magnifying-glass.svg') }}">
+        </button>
+
+        <a href="" class="max-md:hidden flex items-center gap-1 bg-accent shadow-xs p-4 rounded-xl font-medium text-sm cursor-pointer">
+          <img class="select-none" src="{{ Vite::asset('resources/images/lightning.svg') }}">
+          Get All Access
+        </a>
+
+      </div>
+
+      {{-- Sidebar nav --}}
+      <nav id="menu" class="group/nav max-xl:invisible top-0 max-md:top-24 max-xl:top-full max-xl:right-0 xl:left-0 fixed md:max-xl:absolute max-xl:opacity-0 xl:p-2 max-md:px-5 max-xl:pt-3 max-md:w-full xl:h-full">
+
+        <div class="flex flex-col justify-between bg-white shadow-xs p-6 max-xl:p-8 rounded-xl w-24 max-md:w-full max-xl:w-55 xl:group-hover/nav:w-60 h-full xl:transition-all xl:duration-300">
+          <div class="max-xl:hidden">
+            menu
+          </div>
+          <ul class="flex flex-col gap-2 max-xl:gap-3">
+            @for ($i = 0; $i < 4; $i++)
+            <li>
+              <x-link text="Home">
+                <svg class="*:max-xl:fill-neutral-300 size-5 max-xl:size-4" data-testid="geist-icon" height="16" stroke-linejoin="round" style="color:currentColor" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.268 14.0934C11.9051 13.4838 13.2303 12.2333 13.9384 10.6469C13.1192 10.7941 12.2138 10.9111 11.2469 10.9925C11.0336 12.2005 10.695 13.2621 10.268 14.0934ZM8 16C12.4183 16 16 12.4183 16 8C16 3.58172 12.4183 0 8 0C3.58172 0 0 3.58172 0 8C0 12.4183 3.58172 16 8 16ZM8.48347 14.4823C8.32384 14.494 8.16262 14.5 8 14.5C7.83738 14.5 7.67616 14.494 7.51654 14.4823C7.5132 14.4791 7.50984 14.4759 7.50647 14.4726C7.2415 14.2165 6.94578 13.7854 6.67032 13.1558C6.41594 12.5744 6.19979 11.8714 6.04101 11.0778C6.67605 11.1088 7.33104 11.125 8 11.125C8.66896 11.125 9.32395 11.1088 9.95899 11.0778C9.80021 11.8714 9.58406 12.5744 9.32968 13.1558C9.05422 13.7854 8.7585 14.2165 8.49353 14.4726C8.49016 14.4759 8.4868 14.4791 8.48347 14.4823ZM11.4187 9.72246C12.5137 9.62096 13.5116 9.47245 14.3724 9.28806C14.4561 8.87172 14.5 8.44099 14.5 8C14.5 7.55901 14.4561 7.12828 14.3724 6.71194C13.5116 6.52755 12.5137 6.37904 11.4187 6.27753C11.4719 6.83232 11.5 7.40867 11.5 8C11.5 8.59133 11.4719 9.16768 11.4187 9.72246ZM10.1525 6.18401C10.2157 6.75982 10.25 7.36805 10.25 8C10.25 8.63195 10.2157 9.24018 10.1525 9.81598C9.46123 9.85455 8.7409 9.875 8 9.875C7.25909 9.875 6.53877 9.85455 5.84749 9.81598C5.7843 9.24018 5.75 8.63195 5.75 8C5.75 7.36805 5.7843 6.75982 5.84749 6.18401C6.53877 6.14545 7.25909 6.125 8 6.125C8.74091 6.125 9.46123 6.14545 10.1525 6.18401ZM11.2469 5.00748C12.2138 5.08891 13.1191 5.20593 13.9384 5.35306C13.2303 3.7667 11.9051 2.51622 10.268 1.90662C10.695 2.73788 11.0336 3.79953 11.2469 5.00748ZM8.48347 1.51771C8.4868 1.52089 8.49016 1.52411 8.49353 1.52737C8.7585 1.78353 9.05422 2.21456 9.32968 2.84417C9.58406 3.42562 9.80021 4.12856 9.95899 4.92219C9.32395 4.89118 8.66896 4.875 8 4.875C7.33104 4.875 6.67605 4.89118 6.04101 4.92219C6.19978 4.12856 6.41594 3.42562 6.67032 2.84417C6.94578 2.21456 7.2415 1.78353 7.50647 1.52737C7.50984 1.52411 7.51319 1.52089 7.51653 1.51771C7.67615 1.50597 7.83738 1.5 8 1.5C8.16262 1.5 8.32384 1.50597 8.48347 1.51771ZM5.73202 1.90663C4.0949 2.51622 2.76975 3.7667 2.06159 5.35306C2.88085 5.20593 3.78617 5.08891 4.75309 5.00748C4.96639 3.79953 5.30497 2.73788 5.73202 1.90663ZM4.58133 6.27753C3.48633 6.37904 2.48837 6.52755 1.62761 6.71194C1.54392 7.12828 1.5 7.55901 1.5 8C1.5 8.44099 1.54392 8.87172 1.62761 9.28806C2.48837 9.47245 3.48633 9.62096 4.58133 9.72246C4.52807 9.16768 4.5 8.59133 4.5 8C4.5 7.40867 4.52807 6.83232 4.58133 6.27753ZM4.75309 10.9925C3.78617 10.9111 2.88085 10.7941 2.06159 10.6469C2.76975 12.2333 4.0949 13.4838 5.73202 14.0934C5.30497 13.2621 4.96639 12.2005 4.75309 10.9925Z" fill="currentColor"></path></svg>
+              </x-link>
+            </li>
+            @endfor
+          </ul>
+          <div class="max-md:flex max-md:flex-col max-md:gap-2">
+            <x-link text="Home">
+              <svg class="*:max-xl:fill-neutral-300 size-5 max-xl:size-4" data-testid="geist-icon" height="16" stroke-linejoin="round" style="color:currentColor" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.268 14.0934C11.9051 13.4838 13.2303 12.2333 13.9384 10.6469C13.1192 10.7941 12.2138 10.9111 11.2469 10.9925C11.0336 12.2005 10.695 13.2621 10.268 14.0934ZM8 16C12.4183 16 16 12.4183 16 8C16 3.58172 12.4183 0 8 0C3.58172 0 0 3.58172 0 8C0 12.4183 3.58172 16 8 16ZM8.48347 14.4823C8.32384 14.494 8.16262 14.5 8 14.5C7.83738 14.5 7.67616 14.494 7.51654 14.4823C7.5132 14.4791 7.50984 14.4759 7.50647 14.4726C7.2415 14.2165 6.94578 13.7854 6.67032 13.1558C6.41594 12.5744 6.19979 11.8714 6.04101 11.0778C6.67605 11.1088 7.33104 11.125 8 11.125C8.66896 11.125 9.32395 11.1088 9.95899 11.0778C9.80021 11.8714 9.58406 12.5744 9.32968 13.1558C9.05422 13.7854 8.7585 14.2165 8.49353 14.4726C8.49016 14.4759 8.4868 14.4791 8.48347 14.4823ZM11.4187 9.72246C12.5137 9.62096 13.5116 9.47245 14.3724 9.28806C14.4561 8.87172 14.5 8.44099 14.5 8C14.5 7.55901 14.4561 7.12828 14.3724 6.71194C13.5116 6.52755 12.5137 6.37904 11.4187 6.27753C11.4719 6.83232 11.5 7.40867 11.5 8C11.5 8.59133 11.4719 9.16768 11.4187 9.72246ZM10.1525 6.18401C10.2157 6.75982 10.25 7.36805 10.25 8C10.25 8.63195 10.2157 9.24018 10.1525 9.81598C9.46123 9.85455 8.7409 9.875 8 9.875C7.25909 9.875 6.53877 9.85455 5.84749 9.81598C5.7843 9.24018 5.75 8.63195 5.75 8C5.75 7.36805 5.7843 6.75982 5.84749 6.18401C6.53877 6.14545 7.25909 6.125 8 6.125C8.74091 6.125 9.46123 6.14545 10.1525 6.18401ZM11.2469 5.00748C12.2138 5.08891 13.1191 5.20593 13.9384 5.35306C13.2303 3.7667 11.9051 2.51622 10.268 1.90662C10.695 2.73788 11.0336 3.79953 11.2469 5.00748ZM8.48347 1.51771C8.4868 1.52089 8.49016 1.52411 8.49353 1.52737C8.7585 1.78353 9.05422 2.21456 9.32968 2.84417C9.58406 3.42562 9.80021 4.12856 9.95899 4.92219C9.32395 4.89118 8.66896 4.875 8 4.875C7.33104 4.875 6.67605 4.89118 6.04101 4.92219C6.19978 4.12856 6.41594 3.42562 6.67032 2.84417C6.94578 2.21456 7.2415 1.78353 7.50647 1.52737C7.50984 1.52411 7.51319 1.52089 7.51653 1.51771C7.67615 1.50597 7.83738 1.5 8 1.5C8.16262 1.5 8.32384 1.50597 8.48347 1.51771ZM5.73202 1.90663C4.0949 2.51622 2.76975 3.7667 2.06159 5.35306C2.88085 5.20593 3.78617 5.08891 4.75309 5.00748C4.96639 3.79953 5.30497 2.73788 5.73202 1.90663ZM4.58133 6.27753C3.48633 6.37904 2.48837 6.52755 1.62761 6.71194C1.54392 7.12828 1.5 7.55901 1.5 8C1.5 8.44099 1.54392 8.87172 1.62761 9.28806C2.48837 9.47245 3.48633 9.62096 4.58133 9.72246C4.52807 9.16768 4.5 8.59133 4.5 8C4.5 7.40867 4.52807 6.83232 4.58133 6.27753ZM4.75309 10.9925C3.78617 10.9111 2.88085 10.7941 2.06159 10.6469C2.76975 12.2333 4.0949 13.4838 5.73202 14.0934C5.30497 13.2621 4.96639 12.2005 4.75309 10.9925Z" fill="currentColor"></path></svg>
+            </x-link>
+          </div>
+        </div>
+      </nav>
+
     </div>
   </div>
   @include('partials.search-form')

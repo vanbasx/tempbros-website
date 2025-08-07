@@ -1,13 +1,14 @@
-import dymanicAdaptInit from "./dynamicAdapt";
 import searchFormInit from "./searchForm";
-import sidebarMenuInit from "./sidebarMenu";
+import burgerMenuInit from "./burgerMenu";
+import dymanicAdaptInit from "./dynamicAdapt";
 
 import.meta.glob([
   '../images/**',
   '../fonts/**',
 ]);
 
-
-searchFormInit();
-sidebarMenuInit();
-dymanicAdaptInit();
+document.addEventListener('DOMContentLoaded', () => {
+  searchFormInit();
+  burgerMenuInit();
+  dymanicAdaptInit();
+});
