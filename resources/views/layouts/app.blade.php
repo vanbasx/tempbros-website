@@ -13,7 +13,7 @@
     <link rel="preload" href="{{ Vite::asset('resources/fonts/Outfit-Medium.woff2') }}" as="font" type="font/woff2" crossorigin="">
   </head>
 
-  <body @php(body_class('bg-neutral-50'))>
+  <body @php(body_class('bg-neutral-100/80'))>
     @php(wp_body_open())
 
     <div id="app">

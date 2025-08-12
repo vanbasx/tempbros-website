@@ -17,11 +17,9 @@ export default function burgerMenuInit() {
       let isReversing = !tl.reversed();
 
       if (isReversing) {
-        header.classList.remove('active-menu');
-        btn.classList.remove('active-menu-btn');
+        btn.classList.remove('active-menu');
       } else {
-        header.classList.add('active-menu');
-        btn.classList.add('active-menu-btn');
+        btn.classList.add('active-menu');
       }
 
       tl.reversed(isReversing);
@@ -46,8 +44,7 @@ export default function burgerMenuInit() {
 
     return () => {
       btn.removeEventListener('click', clickHandler);
-      header.classList.remove('active-menu');
-      btn.classList.remove('active-menu-btn');
+      btn.classList.remove('active-menu');
     };
   });
 
@@ -58,9 +55,9 @@ export default function burgerMenuInit() {
       let isReversing = !tl.reversed();
 
       if (isReversing) {
-        btn.classList.remove('active-menu-btn');
+        btn.classList.remove('active-menu');
       } else {
-        btn.classList.add('active-menu-btn');
+        btn.classList.add('active-menu');
       }
 
       tl.reversed(isReversing);
@@ -82,7 +79,7 @@ export default function burgerMenuInit() {
 
     return () => {
       btn.removeEventListener('click', clickHandler);
-      btn.classList.remove('active-menu-btn');
+      btn.classList.remove('active-menu');
     };
   });
 }
