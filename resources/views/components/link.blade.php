@@ -4,7 +4,7 @@
 
 <a 
   {{ $attributes }}
-  class="group/link relative flex items-center max-xl:gap-3"
+  class="group/link relative flex items-center max-xl:gap-3 cursor-pointer"
 >
   <div class="flex justify-center items-center xl:group-hover/link:bg-neutral-100 max-xl:opacity-40 group-hover/link:opacity-100 rounded-full xl:size-10 transition-all shrink-0">
     {!! $icon !!}

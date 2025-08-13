@@ -41,7 +41,7 @@
       </div>
       {{-- Sidebar nav --}}
       <nav id="menu" class="group/nav max-xl:invisible top-0 max-md:top-24 max-xl:top-full max-xl:right-0 xl:left-0 fixed md:max-xl:absolute max-xl:opacity-0 xl:p-2 max-md:px-5 max-xl:pt-3 max-md:w-full xl:h-full">
-        <div class="flex flex-col justify-between bg-white shadow-xs p-6 max-xl:p-8 rounded-xl w-24 max-md:w-full max-xl:w-55 xl:group-hover/nav:w-60 h-full transition-all xl:duration-350">
+        <div class="flex flex-col justify-between bg-white shadow-xs p-6 max-xl:p-8 rounded-xl w-24 max-md:w-full max-xl:w-55 xl:group-hover/nav:w-60 h-full xl:transition-all xl:duration-350">
           <div class="max-xl:hidden">
             menu
           </div>
